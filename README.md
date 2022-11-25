@@ -1,2 +1,3 @@
-# brainstorm_scripts
-Small scripts that I used for my thesis. This repository doubles as a coding practice. Maybe the scripts are useful to someone.
+# Script 1: Automatic electrode location
+
+During this project it was required to determine the location of ECoG (over the cortex surface) electrodes on a pig subject. Using a non-human animal subject means that automatic tools are mostly not available and must be constructed from ground.
