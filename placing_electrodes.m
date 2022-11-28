@@ -3,13 +3,14 @@
 %addpath 'D:\brainstorm3'
 %brainstorm
 
-
-
 %%
 % PARAMETERS
 
-%cortex_conn = xport.Faces;
-%cortex_vert = xport.Vertices;
+%cortex_conn = example1.Faces;
+%cortex_vert = example1.Vertices;
+
+%cortex_conn = cortex.Faces;
+%cortex_vert = cortex.Vertices;
 
 dev = true;
 vis_width = 0.001;
@@ -45,12 +46,10 @@ end
 [M,~] = max( cortex_vert(:,1) );
 old_M = M+vis_tol*2;
 iter = 0;
-%M_col = [M];
 while ( abs(M-old_M) >= vis_tol ) && ( iter < max_iter )
     strip_idx = abs( cortex_vert(:,1)-M ) < vis_width;
     old_M = M;
     M = quantile(cortex_vert(strip_idx,1), 0.98);
-    %M_col = [M_col, M];
     iter = iter +1;
 end
 if dev
@@ -92,7 +91,6 @@ if dev
     figure()
     trisurf(cortex_conn, cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),...
         'FaceColor',[.85 .85 .85])
-    %scatter3(cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),'filled')
     xlabel('x')
     ylabel('y')
     zlabel('z')
@@ -119,7 +117,6 @@ if dev
     figure()
     trisurf(cortex_conn, cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),...
         'FaceColor',[.85 .85 .85])
-    %scatter3(cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),'filled')
     xlabel('x')
     ylabel('y')
     zlabel('y')
@@ -203,17 +200,15 @@ end
 if(dev)
     figure()
     trisurf(cortex_conn, cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),...
-        'FaceColor',[.85 .85 .85],'FaceAlpha',.3)
-    %scatter3(cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),'filled')
+        'FaceColor',[.85 .85 .85],'FaceAlpha',.4)
     xlabel('x')
     ylabel('y')
     zlabel('y')
     title('Cortex surface')
     hold on
-    %scatter3(ctr_mark(:,1),ctr_mark(:,2),ctr_mark(:,3),200,'filled')
     scatter3(guides_idx(:,1),guides_idx(:,2),guides_idx(:,3),'filled')
-    scatter3(ElectrodeCoords(:,1),ElectrodeCoords(:,2),ElectrodeCoords(:,3),200,'filled')
     scatter3(cortex_vert(vis_idx,1),cortex_vert(vis_idx,2),cortex_vert(vis_idx,3),'r','filled')
+    scatter3(ElectrodeCoords(:,1),ElectrodeCoords(:,2),ElectrodeCoords(:,3),200,'filled')
     legend('','Reference lines','Electrodes','Anterior Edge')
 end
 
@@ -221,62 +216,3 @@ end
 % labels
 
 writematrix(ElectrodeCoords)
-
-%% 
-% creation of an example
-% this select the upper part of the pial
-
-% xport = xport_pre;
-% 
-% N = size(xport.Vertices,1);
-% idx = xport.Vertices(:,3)>0.01;
-% 
-% xport.Vertices = xport.Vertices(idx,:);
-% xport.VertConn = xport.VertConn(idx,idx);
-% xport.VertNormals = xport.VertNormals(idx,:);
-% xport.Curvature = xport.Curvature(idx,:);
-% xport.SulciMap = xport.SulciMap(idx,:);
-% 
-% idx_rev = zeros(N,1 );
-% counter = 1;
-% for i = 1:N
-%     if idx(i)
-%         idx_rev(i) = counter;
-%         counter = counter+1;
-%     end
-% end
-% for i = 1:size(xport.Faces,1)
-%     xport.Faces(i,1) = idx_rev( xport.Faces(i,1) );
-%     xport.Faces(i,2) = idx_rev( xport.Faces(i,2) );
-%     xport.Faces(i,3) = idx_rev( xport.Faces(i,3) );
-% end
-% 
-% idx_fac = (xport.Faces(:,1)==0);
-% for i = 1:size(idx_fac)
-%     if (xport.Faces(i,1)~=0) && (xport.Faces(i,2)~=0) && (xport.Faces(i,3)~=0)
-%         idx_fac(i) = true;
-%     else
-%         idx_fac(i) = false;
-%     end
-% end
-% xport.Faces = xport.Faces(idx_fac,:);
-% 
-% 
-% 
-% 
-% 
-% 
-% save('xport.mat','xport')
-% 
-% cortex_vert = xport.Vertices;
-% cortex_conn = xport.Faces;
-% if(dev)
-%     % DELETE
-%     figure()
-%     trisurf(cortex_conn, cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3))
-%     scatter3(cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),'filled')
-%     title('Only cortex surface (mesh vertices)')
-%     xlabel('x')
-%     ylabel('y')
-%     zlabel('z')
-% end

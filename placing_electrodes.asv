@@ -3,8 +3,6 @@
 %addpath 'D:\brainstorm3'
 %brainstorm
 
-
-
 %%
 % PARAMETERS
 
@@ -96,7 +94,7 @@ if dev
     xlabel('x')
     ylabel('y')
     zlabel('z')
-    title('Cortex Surface (Mesh Vertices)')
+    title('Cortex Surface')
     hold on 
     scatter3(cortex_vert(vis_idx,1),cortex_vert(vis_idx,2),cortex_vert(vis_idx,3),'r','filled')
     legend('','Anterior Edge')
@@ -117,12 +115,15 @@ med_line = med_line( med_line(:,3)>AntEdge_z, :); % only upper part is relevant
 if dev
     % DELETE
     figure()
-    scatter3(cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),'filled')
+    trisurf(cortex_conn, cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),...
+        'FaceColor',[.85 .85 .85])
+    %scatter3(cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),'filled')
     xlabel('x')
     ylabel('y')
     zlabel('y')
     hold on
     scatter3(med_line(:,1),med_line(:,2),med_line(:,3),'filled')
+    scatter3(cortex_vert(vis_idx,1),cortex_vert(vis_idx,2),cortex_vert(vis_idx,3),'r','filled')
 end
 
 x_0 = min( med_line(:,1) );
@@ -199,7 +200,9 @@ end
 
 if(dev)
     figure()
-    scatter3(cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),'filled')
+    trisurf(cortex_conn, cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),...
+        'FaceColor',[.85 .85 .85],'FaceAlpha',.3)
+    %scatter3(cortex_vert(:,1),cortex_vert(:,2),cortex_vert(:,3),'filled')
     xlabel('x')
     ylabel('y')
     zlabel('y')
@@ -208,7 +211,8 @@ if(dev)
     %scatter3(ctr_mark(:,1),ctr_mark(:,2),ctr_mark(:,3),200,'filled')
     scatter3(guides_idx(:,1),guides_idx(:,2),guides_idx(:,3),'filled')
     scatter3(ElectrodeCoords(:,1),ElectrodeCoords(:,2),ElectrodeCoords(:,3),200,'filled')
-    legend('','Reference lines','Electrodes')
+    scatter3(cortex_vert(vis_idx,1),cortex_vert(vis_idx,2),cortex_vert(vis_idx,3),'r','filled')
+    legend('','Reference lines','Electrodes','Anterior Edge')
 end
 
 %%
