@@ -209,7 +209,7 @@ if(dev)
     scatter3(guides_idx(:,1),guides_idx(:,2),guides_idx(:,3),'filled')
     scatter3(cortex_vert(vis_idx,1),cortex_vert(vis_idx,2),cortex_vert(vis_idx,3),'r','filled')
     scatter3(ElectrodeCoords(:,1),ElectrodeCoords(:,2),ElectrodeCoords(:,3),200,'filled')
-    legend('','Reference lines','Electrodes','Anterior Edge')
+    legend('','Reference lines','Anterior Edge','Electrodes')
 end
 
 %%
