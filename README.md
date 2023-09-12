@@ -1,7 +1,6 @@
 # Script 1: Automatic electrode location
 
-- **Task:**
-  - Determine the locations of surface electrodes.
+Electrode positions in some animal models -such as minipig, _Sus scrofa_- are not yet fully standardized. Thus electrode position must be determined manually.
 
 - **Input:**
   - Surface of the brain cortex.
@@ -9,8 +8,6 @@
 
 - **Output:**
   - Electrode locations
-
-Electrode positions in some animal models -such as minipig, _Sus scrofa_- are not yet fully standardized. Thus electrode position must be determined manually.
 
 The brain cortex surface was extracted from a publicly available MRI template, published by Norris et al. 
 Extraction was performed using the CAT toolbox, running within the Brainstorm toolbox.
