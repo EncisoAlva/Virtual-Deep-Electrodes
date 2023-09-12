@@ -30,11 +30,18 @@ MRI brain templates of the male Yucatan minipig (2021) Norris C, Lisinski J, McN
 # Script 2: Estimate Deep Electrode Recordings via Electrical Source Imaging
 
 Once the Wiener Kernel or Full Inverse Solution is computed, such data is used to simulate the recordings that could be obtained from Deep Electrodes.
-
 For each intended depth electrode, a scout is created with the dipoles located within some given distance. These dipoles are averaged over each canonical direction, and then the magnitude is extracted.
+
+This script was intended for a paper in which the data from these Estimated Deep Electrodes was compared to that of real Deep Electrodes.
 
 <img src="script2_EstimateDeepElectrodes/img/basic_idea.png" width="429" height="400">
 
 ## Prerrequisites
 
-asfsadfas
+Brainstorm toolbox.
+
+Copy to .brainstorm/process.
+
+## Usage
+
+After doing the inverse model (cite from Brainstorm page), select to Process -> Souces -> .
