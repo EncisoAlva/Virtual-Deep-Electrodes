@@ -22,6 +22,8 @@ The protocol for placing the electrodes is as follows:
 6. Use superior-inferior as the direction of the stylet.
 7. Starting at 10 mm from the entry point, place Deep Electrodes with 5 mm center-to-center.
 
+<img src="script1_ElectrodeLocation/img/electrodes_lines.png" width="429" height="400">
+
 I want to rewrite this script as a Brainstorm-readable function in future versions.
 
 ## References
@@ -34,7 +36,7 @@ For each intended depth electrode, a scout is created with the dipoles located w
 
 This script was intended for a paper in which the data from these Estimated Deep Electrodes was compared to that of real Deep Electrodes.
 
-<img src="script2_EstimateDeepElectrodes/img/basic_idea.png" width="429" height="400">
+<img src="script2_EstimateDeepElectrodes/img/basic_idea.png" width="500" height="218">
 
 ## Prerrequisites
 
