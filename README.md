@@ -1,6 +1,6 @@
 # Script 1: Automatic electrode location
 
-Electrode positions in some animal models -such as minipig, _Sus scrofa_- are not yet fully standardized. Thus electrode position must be determined manually.
+Electrode positions in some animal models -such as minipig, _Sus scrofa_- are not yet fully standardized. Thus, the electrode positions must be determined manually.
 
 - **Input:**
   - Surface of the brain cortex.
@@ -26,3 +26,15 @@ I want to rewrite this script as a Brainstorm-readable function in future versio
 
 ## References
 MRI brain templates of the male Yucatan minipig (2021) Norris C, Lisinski J, McNeil E, et al. NeuroImage. DOI: 10.1016/j.neuroimage.2021.118015
+
+# Script 2: Estimate Deep Electrode Recordings via Electrical Source Imaging
+
+Once the Wiener Kernel or Full Inverse Solution is computed, such data is used to simulate the recordings that could be obtained from Deep Electrodes.
+
+For each intended depth electrode, a scout is created with the dipoles located within some given distance. These dipoles are averaged over each canonical direction, and then the magnitude is extracted.
+
+![Visual summary of the process.](script2_EstimateDeepElectrodes/img/basic_idea.png)
+
+## Prerrequisites
+
+asfsadfas
