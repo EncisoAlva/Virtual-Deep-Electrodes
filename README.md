@@ -33,7 +33,7 @@ Once the Wiener Kernel or Full Inverse Solution is computed, such data is used t
 
 For each intended depth electrode, a scout is created with the dipoles located within some given distance. These dipoles are averaged over each canonical direction, and then the magnitude is extracted.
 
-![Visual summary of the process.](script2_EstimateDeepElectrodes/img/basic_idea.png){:height="107px" width="100px"}
+<img src="script2_EstimateDeepElectrodes/img/basic_idea.png" width="107" height="100">
 
 ## Prerrequisites
 
