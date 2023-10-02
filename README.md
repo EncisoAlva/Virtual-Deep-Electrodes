@@ -1,3 +1,15 @@
+This repository contains a collection of custom scripts made by me during some projects in which I worked. They are written so that they can be integrated into the Brainstorm toolbox, which increases their usability by non-programmers.
+
+Brainstorm is a toolbox written in Matlab for analysis of brain recordings including, but not limited to MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, the Brainstorm toolbox offers integration with state-of-art toolboxes such as OPENMEEG and CAT12.
+
+More information in their [website](https://neuroimage.usc.edu/brainstorm/Introduction).
+
+# Setup
+
+In order to run these scripts, it is necessary to install both Matlab and Brainstorm 
+
+Take note of the location of the .brainstorm/process. Copy the file *process_(...).m* to that folder, and run Brainstorm as usual. Information on usage is specific to each script.
+
 # Script 1: Automatic electrode location
 
 Electrode positions in some animal models -such as minipig, _Sus scrofa_- are not yet fully standardized. Thus, the electrode positions must be determined manually.
@@ -38,11 +50,6 @@ This script was intended for a paper in which the data from these Estimated Deep
 
 <img src="script2_EstimateDeepElectrodes/img/basic_idea.png" width="429" height="400">
 
-## Prerrequisites
-
-Brainstorm toolbox.
-
-Copy to .brainstorm/process.
 
 ## Usage
 
