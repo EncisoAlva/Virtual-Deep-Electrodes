@@ -69,7 +69,7 @@ Although it is preferred to compute the magnitude of the averaged dipoles, there
 
 **This script is part of a paper under review.**
 
-<img src="script2_EstimateDeepElectrodes/img/basic_idea.png" width="429" height="400">
+<img src="script2_EstimateDeepElectrodes/img/diagram_v2.png" width="429" height="400">
 
 ## Usage
 
