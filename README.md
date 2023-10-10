@@ -1,18 +1,20 @@
 This repository contains a collection of custom scripts made by me during some projects in which I worked. They are written so that they can be integrated into the Brainstorm toolbox, which increases their usability by non-programmers.
 
-Brainstorm is a toolbox written in Matlab for analysis of brain recordings including, but not limited to MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, the Brainstorm toolbox offers integration with state-of-art toolboxes such as OPENMEEG and CAT12.
-
-More information in their [website](https://neuroimage.usc.edu/brainstorm/Introduction).
+Brainstorm is a toolbox written in Matlab for analysis of brain recordings including, but not limited to MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, Brainstorm offers integrations with state-of-the-art toolboxes such as CAT12 for processing anatomical MRI data, and OPENMEEG for solving the forward problems of EEG vs electrical dipoles.
 
 # Setup
 
-In order to run these scripts, it is necessary to install both Matlab and Brainstorm 
+In order to run these scripts, make sure to have a working installation of [Brainstorm](https://neuroimage.usc.edu/brainstorm/Installation). 
 
-Take note of the location of the .brainstorm/process. Copy the file *process_(...).m* to that folder, and run Brainstorm as usual. Information on usage is specific to each script.
+Take note of the location of the folder `~/.brainstorm/process`; this is for user-defined processes. Copy the provided file `process_(...).m` to that folder, then run Brainstorm as usual. 
+
+Information on usage is specific to each function.
 
 # Script 1: Automatic electrode location
 
-Electrode positions in some animal models -such as minipig, _Sus scrofa_- are not yet fully standardized. Thus, the electrode positions must be determined manually.
+This script determines the locations of either a rectangular grid of surface electrodes, or depth electrodes on a stylet. The protocol for this is to locate the Central Line and Anterior Edge, then locate electrodes based on that information, taking into account the curvature of the surface.
+
+<img src="script1_ElectrodeLocation/img/diagramGrid1.png" width="295" height="500">
 
 - **Input:**
   - Surface of the brain cortex.
