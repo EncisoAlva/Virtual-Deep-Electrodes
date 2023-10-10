@@ -58,16 +58,22 @@ The algrithm is quite simple: the curved lines are constructed by taking strips 
 
 <img src="script1_ElectrodeLocation/img/electrodes_lines.png" width="500" height="218">
 
-# Script 2: Estimate Deep Electrode Recordings via Electrical Source Imaging
+# Script 2: Virtual Electrodes via Electrical Source Imaging
 
-Once the Wiener Kernel or Full Inverse Solution is computed, such data is used to simulate the recordings that could be obtained from Deep Electrodes.
-For each intended depth electrode, a scout is created with the dipoles located within some given distance. These dipoles are averaged over each canonical direction, and then the magnitude is extracted.
+Once the inverse solution for the Electrical Source Imaging is computed, the resulting data is used to simulate recordings that would be obtained by theoretical deep electrodes located at arbitrary locations inside the brain. 
 
-This script was intended for a paper in which the data from these Estimated Deep Electrodes was compared to that of real Deep Electrodes.
+For each of these _virtual deep electrodes_, a volume scout is created by considering a sphere with its center at the proposed location and a radius of _R_ mm. 
+The magnitudes of dipoles inside each scout are averaged over space in each canonical direction, thus obtaining a time series representing the _recordings_ from that virtual electrode. 
+
+Although it is preferred to compute the magnitude of the averaged dipoles, there is also the option to compute the first PCA component of the data to obtain unsigned data. This is computationally expensive, and I haven't added the proper warnings yet. The temporary solution is to process by batches, yet the numerical stability of this hasn't been explored.
+
+**This script is part of a paper under review.**
 
 <img src="script2_EstimateDeepElectrodes/img/basic_idea.png" width="429" height="400">
 
-
 ## Usage
 
-After doing the inverse model (cite from Brainstorm page), select to Process -> Souces -> .
+1. Perform Electrical Source Reconstruction. For a tutorial on how to do that, follow [this link](https://neuroimage.usc.edu/brainstorm/Tutorials/SourceEstimation).
+2. After computing electrical sources, drag the results to the _Process_ section and click `Run`.
+3. Navigate to _Add process / Sources / Virtual Deep Electrodes_.
+4. Adjust parameters and proceed.
