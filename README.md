@@ -16,7 +16,7 @@ This script determines the locations of either a rectangular grid of surface ele
 
 ## For surface electrodes
 
-** Input: **
+**Input:**
 -  `surface` Surface triangulation, `struct`.
 -  `nPA`  Size of rectangle grid in the Posterior-Anterior.
 -  `nLR`  Size of rectangle grid in the Left-Right direction.
@@ -24,31 +24,37 @@ This script determines the locations of either a rectangular grid of surface ele
 -  `LR0`  Distance [mm] from the Central Line to the first electrode.
 -  `dPA`  Center-to-center distance between electrodes in the Posterior-Anterior direction.
 -  `dLR`  Center-to-center distance between electrodes in the Left-Rigt direction.
+-  `TH` Angle with respect to a parallel to the Central Line.
 
-** Output: **
+**Output:**
 - `ElecLocs` Locations of electrodes, (nAP)x(nLR)x3
 
 <img src="script1_ElectrodeLocation/img/diagramGrid1.png" width="500" height="295"> <img src="script1_ElectrodeLocation/img/diagramGrid2.png" width="375" height="295">
 
-The brain cortex surface was extracted from a publicly available MRI template, published by Norris et al. 
-Extraction was performed using the CAT toolbox, running within the Brainstorm toolbox.
-The resulting data was exported as 'cortex.mat'.
+## For insterted electrodes
 
-The protocol for placing the electrodes is as follows:
-1. Identify Central Line.
-2. Identify Anterior Edge.
-3. Create a line parallel to the Central Line, separated by 10 mm from it.
-4. Starting at 10 mm from the Anterior Edge, place ECoG electrodes with 10 mm center-to-center.
-5. Identify the point between electrodes 2 and 3 as the Entry Point for stylet.
-6. Use superior-inferior as the direction of the stylet.
-7. Starting at 10 mm from the entry point, place Deep Electrodes with 5 mm center-to-center.
+**Input:**
+-  `surface` Surface triangulation, `struct`.
+-  `nIS`  Number of electrodes in the stylet.
+-  `PA0`  Distance [mm] from the Anterior Edge to the Insertion Point.
+-  `LR0`  Distance [mm] from the Central Line to the Insertion Point.
+-  `IS0`  Distance [mm] from the Insertion Point to the first electrode.
+-  `dIS`  Center-to-center distance between electrodes in the stylet.
+
+**Output:**
+- `ElecLocs` Locations of electrodes, (1)x(nIS)x3
+
+<img src="script1_ElectrodeLocation/img/diagramStylet1.png" width="500" height="605"> 
 
 <img src="script1_ElectrodeLocation/img/electrodes_lines.png" width="500" height="218">
 
-I want to rewrite this script as a Brainstorm-readable function in future versions.
+## NOTES
 
-## References
-MRI brain templates of the male Yucatan minipig (2021) Norris C, Lisinski J, McNeil E, et al. NeuroImage. DOI: 10.1016/j.neuroimage.2021.118015
+This function was developed for a project involving animal models for ischemic stroke. Electrode positions in some animal models --such as minipig, _Sus scrofa_-- are not yet fully standardized. Thus, the electrode positions must be determined manually following some protocol.
+
+Multiple configurations were used for training purposes. I found it easier to code the placing protocol and **then** adjust based on observations, than to determine the locations based purely on observations.
+
+The rewriting of this function as a Brainstorm process is not finished yet.
 
 # Script 2: Estimate Deep Electrode Recordings via Electrical Source Imaging
 
