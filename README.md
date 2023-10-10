@@ -31,7 +31,7 @@ Although it is preferred to compute the magnitude of the averaged dipoles, there
 3. Navigate to _Add process / Sources / Virtual Deep Electrodes_.
 4. Adjust parameters and proceed.
 
-5. <img src="script2_EstimateDeepElectrodes/img/Screenshot.png" width="350" height="267">
+<img src="script2_EstimateDeepElectrodes/img/Screenshot.png" width="350" height="267">
 
 # Script 1: Automatic electrode location
 
