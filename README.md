@@ -14,7 +14,7 @@ Information on usage is specific to each function.
 
 This script determines the locations of either a rectangular grid of surface electrodes, or depth electrodes on a stylet. The protocol for this is to locate the Central Line and Anterior Edge, then locate electrodes based on that information, taking into account the curvature of the surface.
 
-<img src="script1_ElectrodeLocation/img/diagramGrid1.png" width="500" height="295">
+<img src="script1_ElectrodeLocation/img/diagramGrid1.png" width="500" height="295"> <img src="script1_ElectrodeLocation/img/diagramGrid2.png" width="375" height="295">
 
 - **Input:**
   - Surface of the brain cortex.
