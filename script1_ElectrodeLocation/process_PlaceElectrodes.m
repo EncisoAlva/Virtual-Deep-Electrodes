@@ -1,12 +1,21 @@
-function varargout = process_PlaceElectrodes( varargin )
-%
-end
-
 %% INTRO
 
 % Electrode positions in some animal models --such as minipig, Sus scrofa-- 
 % are not yet fully standardized. Thus, the electrode positions must be 
 % determined manually followingsome protocol.
+function varargout = process_PlaceElectrodes( varargin )
+%
+end
+
+%% ===== GET DESCRIPTION =====
+function sProcess = GetDescription()
+%
+end
+
+%% ===== FORMAT COMMENT =====
+function Comment = FormatComment(sProcess)
+    Comment = sProcess.Comment;
+end
 
 %% SURFACE ELECTRODES
 function locs = PlaceSurfaceElectrodesIdeal()
