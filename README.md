@@ -29,9 +29,9 @@ This script determines the locations of either a rectangular grid of surface ele
 **Output:**
 - `ElecLocs` Locations of electrodes, (nAP)x(nLR)x3
 
-<img src="script1_ElectrodeLocation/img/diagramGrid1.png" width="500" height="295"> <img src="script1_ElectrodeLocation/img/diagramGrid2.png" width="375" height="295">
+<img src="script1_ElectrodeLocation/img/diagramGrid1.png" width="400" height="236"> <img src="script1_ElectrodeLocation/img/diagramGrid2.png" width="300" height="236">
 
-## For insterted electrodes
+## For inserted electrodes
 
 **Input:**
 -  `surface` Surface triangulation, `struct`.
