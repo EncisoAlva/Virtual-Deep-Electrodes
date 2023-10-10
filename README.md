@@ -18,11 +18,11 @@ Once the inverse solution for the Electrical Source Imaging is computed, the res
 For each of these _virtual deep electrodes_, a volume scout is created by considering a sphere with its center at the proposed location and a radius of _R_ mm. 
 The magnitudes of dipoles inside each scout are averaged over space in each canonical direction, thus obtaining a time series representing the _recordings_ from that virtual electrode. 
 
+<img src="script2_EstimateDeepElectrodes/img/diagram_v2.png" width="429" height="400">
+
 Although it is preferred to compute the magnitude of the averaged dipoles, there is also the option to compute the first PCA component of the data to obtain unsigned data. This is computationally expensive, and I haven't added the proper warnings yet. The temporary solution is to process by batches, yet the numerical stability of this hasn't been explored.
 
 **This script is part of a paper under review.**
-
-<img src="script2_EstimateDeepElectrodes/img/diagram_v2.png" width="429" height="400">
 
 ## Usage
 
@@ -30,6 +30,8 @@ Although it is preferred to compute the magnitude of the averaged dipoles, there
 2. After computing electrical sources, drag the results to the _Process_ section and click `Run`.
 3. Navigate to _Add process / Sources / Virtual Deep Electrodes_.
 4. Adjust parameters and proceed.
+
+5. <img src="script2_EstimateDeepElectrodes/img/Screenshot.png" width="350" height="267">
 
 # Script 1: Automatic electrode location
 
@@ -77,6 +79,6 @@ The rewriting of this function as a Brainstorm process is not finished yet.
 
 <img src="script1_ElectrodeLocation/img/diagramStylet1.png" width="400" height="484"> 
 
-The algrithm is quite simple: the curved lines are constructed by taking strips of the cortex surface and then using local interpolation. Distance within the curve is computed via a cumulative length function.
+The algorithm is quite simple: the curved lines are constructed by taking strips of the cortex surface and then using local interpolation. Distance within the curve is computed via a cumulative length function.
 
-<img src="script1_ElectrodeLocation/img/Screenshot.png" width="350" height="267">
+<img src="script1_ElectrodeLocation/img/electrodes_lines.png" width="500" height="219">
