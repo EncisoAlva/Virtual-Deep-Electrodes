@@ -44,9 +44,7 @@ This script determines the locations of either a rectangular grid of surface ele
 **Output:**
 - `ElecLocs` Locations of electrodes, (1)x(nIS)x3
 
-<img src="script1_ElectrodeLocation/img/diagramStylet1.png" width="500" height="605"> 
-
-<img src="script1_ElectrodeLocation/img/electrodes_lines.png" width="500" height="218">
+<img src="script1_ElectrodeLocation/img/diagramStylet1.png" width="400" height="484"> 
 
 ## NOTES
 
@@ -55,6 +53,10 @@ This function was developed for a project involving animal models for ischemic s
 Multiple configurations were used for training purposes. I found it easier to code the placing protocol and **then** adjust based on observations, than to determine the locations based purely on observations.
 
 The rewriting of this function as a Brainstorm process is not finished yet.
+
+The algrithm is quite simple: the curved lines are constructed by taking strips of the cortex surface and then using local interpolation. Distance within the curve is computed via a cumulative length function.
+
+<img src="script1_ElectrodeLocation/img/electrodes_lines.png" width="500" height="218">
 
 # Script 2: Estimate Deep Electrode Recordings via Electrical Source Imaging
 
