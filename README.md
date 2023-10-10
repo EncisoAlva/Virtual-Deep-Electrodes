@@ -14,14 +14,21 @@ Information on usage is specific to each function.
 
 This script determines the locations of either a rectangular grid of surface electrodes, or depth electrodes on a stylet. The protocol for this is to locate the Central Line and Anterior Edge, then locate electrodes based on that information, taking into account the curvature of the surface.
 
+## For surface electrodes
+
+** Input: **
+-  `surface` Surface triangulation, `struct`.
+-  `nPA`  Size of rectangle grid in the Posterior-Anterior.
+-  `nLR`  Size of rectangle grid in the Left-Right direction.
+-  `PA0`  Distance [mm] from the Anterior Edge to the first electrode.
+-  `LR0`  Distance [mm] from the Central Line to the first electrode.
+-  `dPA`  Center-to-center distance between electrodes in the Posterior-Anterior direction.
+-  `dLR`  Center-to-center distance between electrodes in the Left-Rigt direction.
+
+** Output: **
+- `ElecLocs` Locations of electrodes, (nAP)x(nLR)x3
+
 <img src="script1_ElectrodeLocation/img/diagramGrid1.png" width="500" height="295"> <img src="script1_ElectrodeLocation/img/diagramGrid2.png" width="375" height="295">
-
-- **Input:**
-  - Surface of the brain cortex.
-  - Protocol for placing electrodes.
-
-- **Output:**
-  - Electrode locations
 
 The brain cortex surface was extracted from a publicly available MRI template, published by Norris et al. 
 Extraction was performed using the CAT toolbox, running within the Brainstorm toolbox.
