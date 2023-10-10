@@ -77,8 +77,6 @@ Multiple configurations were used for training purposes. I found it easier to co
 
 The rewriting of this function as a Brainstorm process is not finished yet.
 
-<img src="script1_ElectrodeLocation/img/diagramStylet1.png" width="400" height="484"> 
-
 The algorithm is quite simple: the curved lines are constructed by taking strips of the cortex surface and then using local interpolation. Distance within the curve is computed via a cumulative length function.
 
 <img src="script1_ElectrodeLocation/img/electrodes_lines.png" width="500" height="219">
