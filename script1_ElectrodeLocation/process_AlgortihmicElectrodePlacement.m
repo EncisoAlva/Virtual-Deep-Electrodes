@@ -1,4 +1,4 @@
-function none = PlaceElectrodes( vars )
+function none = process_AlgortihmicElectrodePlacement( vars )
 %placekeeper function
 nPA = 4;
 nLR = 1;
