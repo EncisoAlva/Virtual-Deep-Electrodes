@@ -1,5 +1,3 @@
-This repository contains a collection of custom scripts made by me during some projects in which I worked. They are written so that they can be integrated into the Brainstorm toolbox, which increases their usability by non-programmers.
-
 Brainstorm is a toolbox written in Matlab for analysis of brain recordings including, but not limited to MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, Brainstorm offers integrations with state-of-the-art toolboxes such as CAT12 for processing anatomical MRI data, and OPENMEEG for solving the forward problems of EEG vs electrical dipoles.
 
 # Setup
@@ -69,14 +67,13 @@ This script determines the locations of either a rectangular grid of surface ele
 
 <img src="script1_ElectrodeLocation/img/diagramStylet1.png" width="400" height="484"> 
 
-## NOTES
+# Notes from the author
 
-This function was developed for a project involving animal models for ischemic stroke. Electrode positions in some animal models --such as minipig, _Sus scrofa_-- are not yet fully standardized. Thus, the electrode positions must be determined manually following some protocol.
+This function was developed in the context of animal models for the study of acute ischemic stroke. Electrode positions in some animal models --such as minipig, _Sus scrofa_-- are not yet fully standardized, and thus the electrode positions must be determined manually following a given protocol.
 
-Multiple configurations were used for training purposes. I found it easier to code the placing protocol and **then** adjust based on observations, than to determine the locations based purely on observations.
-
-The rewriting of this function as a Brainstorm process is not finished yet.
+I found it easier to code the protocol for electrode placing and **then** adjust based on observations, than to determine the electrode locations based purely on observations.
 
 The algorithm is quite simple: the curved lines are constructed by taking strips of the cortex surface and then using local interpolation. Distance within the curve is computed via a cumulative length function.
+This algorithm is designed for electrodes on the superior part of the cortex.
 
 <img src="script1_ElectrodeLocation/img/electrodes_lines.png" width="500" height="219">
