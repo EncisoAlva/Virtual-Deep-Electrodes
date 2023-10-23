@@ -9,7 +9,7 @@ Take note of the location of the folder `~/.brainstorm/process`; this is for use
 Information on usage is specific to each function.
 
 
-# Script 2: Virtual Electrodes via Electrical Source Imaging
+# Virtual Electrodes via Electrical Source Imaging
 
 Once the inverse solution for the Electrical Source Imaging is computed, the resulting data is used to simulate recordings that would be obtained by theoretical deep electrodes located at arbitrary locations inside the brain. 
 
@@ -31,7 +31,7 @@ Although it is preferred to compute the magnitude of the averaged dipoles, there
 
 <img src="script2_EstimateDeepElectrodes/img/Screenshot.png" width="350" height="267">
 
-# Script 1: Automatic electrode location
+# Automatic Electrode Placement
 
 This script determines the locations of either a rectangular grid of surface electrodes, or depth electrodes on a stylet. The protocol for this is to locate the Central Line and Anterior Edge, then locate electrodes based on that information, taking into account the curvature of the surface.
 
