@@ -16,7 +16,7 @@ Once the inverse solution for the Electrical Source Imaging is computed, the res
 For each of these _virtual deep electrodes_, a volume scout is created by considering a sphere with its center at the proposed location and a radius of _R_ mm. 
 The magnitudes of dipoles inside each scout are averaged over space in each canonical direction, thus obtaining a time series representing the _recordings_ from that virtual electrode. 
 
-<img src="doc_img/diagram_v2.png" width="429" height="400">
+<img src="doc_img/diagram_VE.png" width="429" height="400">
 
 Although it is preferred to compute the magnitude of the averaged dipoles, there is also the option to compute the first PCA component of the data to obtain unsigned data. This is computationally expensive, and I haven't added the proper warnings yet. The temporary solution is to process by batches, yet the numerical stability of this hasn't been explored.
 
@@ -29,7 +29,7 @@ Although it is preferred to compute the magnitude of the averaged dipoles, there
 3. Navigate to _Add process / Sources / Virtual Deep Electrodes_.
 4. Adjust parameters and proceed.
 
-<img src="doc_img/Screenshot.png" width="350" height="267">
+<img src="doc_img/Screenshot_VE.png" width="350" height="267">
 
 # Automatic Electrode Placement
 
@@ -50,7 +50,7 @@ This script determines the locations of either a rectangular grid of surface ele
 **Output:**
 - `ElecLocs` Locations of electrodes, (nAP)x(nLR)x3
 
-<img src="doc_img/diagramGrid1.png" width="400" height="236"> <img src="script1_ElectrodeLocation/img/diagramGrid2.png" width="300" height="236">
+<img src="doc_img/diagram_grid.png" width="400" height="236"> <img src="script1_ElectrodeLocation/img/diagramGrid2.png" width="300" height="236">
 
 ## For inserted electrodes
 
@@ -65,7 +65,7 @@ This script determines the locations of either a rectangular grid of surface ele
 **Output:**
 - `ElecLocs` Locations of electrodes, (1)x(nIS)x3
 
-<img src="doc_img/diagramStylet1.png" width="400" height="484"> 
+<img src="doc_img/diagram_stylet.png" width="400" height="484"> 
 
 # Notes from the author
 
@@ -76,4 +76,4 @@ I found it easier to code the protocol for electrode placing and **then** adjust
 The algorithm is quite simple: the curved lines are constructed by taking strips of the cortex surface and then using local interpolation. Distance within the curve is computed via a cumulative length function.
 This algorithm is designed for electrodes on the superior part of the cortex.
 
-<img src="doc_img/electrodes_lines.png" width="500" height="219">
+<img src="doc_img/raw_lines.png" width="500" height="219">
