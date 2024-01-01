@@ -50,7 +50,7 @@ This script determines the locations of either a rectangular grid of surface ele
 **Output:**
 - `ElecLocs` Locations of electrodes, (nAP)x(nLR)x3
 
-<img src="doc_img/diagram_grid.png" width="400" height="236"> <img src="doc_img/diagramGrid2.png" width="300" height="236">
+<img src="doc_img/diagram_grid.png" width="400" height="236"> <img src="doc_img/diagram_antedge.png" width="300" height="236">
 
 ## For inserted electrodes
 
